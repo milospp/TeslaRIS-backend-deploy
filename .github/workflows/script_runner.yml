@@ -7,8 +7,8 @@ on:
         type: choice
         description: Script
         options: 
-        - Reindex Elasticsearch
-        - Reset Database
+        - reindex
+        - test
         required: true
       environment:
         description: 'Environment'
@@ -29,5 +29,4 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_PRIVATE_KEY }}
           script: |
-            chmod +x /opt/teslaris/scripts/test.sh
-            /opt/teslaris/scripts/test.sh
+            /opt/teslaris/scripts/${{ inputs.script_name }}.sh
