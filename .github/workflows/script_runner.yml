@@ -8,6 +8,7 @@ on:
         description: Script
         options: 
         - reindex
+        - reset_database
         - test
         required: true
       environment:
